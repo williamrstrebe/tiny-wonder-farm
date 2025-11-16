@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5jwnvarqki0a"]
+[gd_scene load_steps=4 format=3 uid="uid://c5jwnvarqki0a"]
 
 [ext_resource type="PackedScene" uid="uid://c2uls51hftvcd" path="res://scenes/grass_background.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://dftinuultaibv" path="res://scenes/farmer.tscn" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://0pj5vrqqxynk" path="res://scenes/strawberry.tscn" id="3_7ykc4"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="grass_background" parent="." instance=ExtResource("1_w2twt")]
+
+[node name="farmer" parent="." instance=ExtResource("2_pw63i")]
+position = Vector2(614, 191)
+
+[node name="strawberry" parent="." instance=ExtResource("3_7ykc4")]
+position = Vector2(765, 238)
