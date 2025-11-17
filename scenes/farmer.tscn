@@ -100,7 +100,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,10 +170,9 @@ script = ExtResource("1_2qlof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_go23t")
-animation = &"walk_right"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 0.3449303
+frame_progress = 0.24120392
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 zoom = Vector2(3, 3)
