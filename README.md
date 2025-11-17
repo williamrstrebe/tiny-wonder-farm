@@ -1,6 +1,6 @@
-Credits goes to
+Credits goes to:
 
-Youtube tutorial (pt-br)
+Inspiration from this Youtube tutorial (pt-br)
 https://www.youtube.com/watch?v=yBepbShZe7Q&list=PLWQkzs8C_YkXIFFlCvvh21sP01jXSsGtk
 
 Assets
