@@ -13,5 +13,14 @@ script = ExtResource("1_pu3yx")
 [node name="farmer" parent="." instance=ExtResource("2_pw63i")]
 position = Vector2(614, 191)
 
+[node name="Label" type="Label" parent="farmer"]
+z_index = 20
+offset_left = 70.55841
+offset_top = 53.0
+offset_right = 193.55841
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 48
+text = "20:00"
+
 [node name="strawberry" parent="." instance=ExtResource("3_7ykc4")]
 position = Vector2(765, 238)

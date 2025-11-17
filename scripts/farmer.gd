@@ -11,29 +11,25 @@ func _physics_process(delta: float) -> void:
 	#Exemplo TIMEOUT / await
 	#await get_tree().create_timer(3.0).timeout
 	
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
+	
 		
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	var direction := Input.get_vector("left", "right", "up", "down")
+	if !Input.is_action_pressed("left") && !Input.is_action_pressed("right") && !Input.is_action_pressed("up") && !Input.is_action_pressed("down"):
+		direction = Vector2.ZERO
 		$AnimatedSprite2D.play("idle")
-		
+			
+	direction = direction.normalized()
+	velocity = direction * SPEED
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.play("walk_left")
-	if Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_pressed("right"):
 		$AnimatedSprite2D.play("walk_right")
+	elif Input.is_action_pressed("up"):
+		$AnimatedSprite2D.play("walk_up")
+	elif Input.is_action_pressed("down"):
+		$AnimatedSprite2D.play("walk_down")
 		
 		

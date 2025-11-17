@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dftinuultaibv"]
+[gd_scene load_steps=34 format=3 uid="uid://dftinuultaibv"]
 
 [ext_resource type="Script" uid="uid://cyj4d3jf6ky7u" path="res://scripts/farmer.gd" id="1_2qlof"]
 [ext_resource type="Texture2D" uid="uid://b7hpg1hdpbd5l" path="res://images/walk and idle.png" id="1_vltvv"]
+[ext_resource type="Texture2D" uid="uid://fdljhtwnaqe0" path="res://images/up_down_walk and idle.png" id="3_hkter"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qlof"]
 atlas = ExtResource("1_vltvv")
@@ -16,6 +17,22 @@ atlas = ExtResource("1_vltvv")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rov4t"]
+atlas = ExtResource("1_vltvv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpwjt"]
+atlas = ExtResource("1_vltvv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqvfu"]
+atlas = ExtResource("1_vltvv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2w3"]
+atlas = ExtResource("1_vltvv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxo87"]
 atlas = ExtResource("1_vltvv")
 region = Rect2(72, 0, 24, 24)
 
@@ -83,6 +100,22 @@ region = Rect2(144, 48, 24, 24)
 atlas = ExtResource("1_vltvv")
 region = Rect2(168, 48, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cftj8"]
+atlas = ExtResource("3_hkter")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfcgh"]
+atlas = ExtResource("3_hkter")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2whp0"]
+atlas = ExtResource("3_hkter")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ta60"]
+atlas = ExtResource("3_hkter")
+region = Rect2(72, 0, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_go23t"]
 animations = [{
 "frames": [{
@@ -101,6 +134,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpwjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqvfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxo87")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,6 +209,23 @@ animations = [{
 "loop": true,
 "name": &"walk_right",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cftj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfcgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2whp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ta60")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loie6"]
@@ -171,9 +238,8 @@ script = ExtResource("1_2qlof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_go23t")
-animation = &"idle"
+animation = &"walk_down"
 autoplay = "idle"
-frame_progress = 0.24120392
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 zoom = Vector2(3, 3)
