@@ -229,7 +229,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loie6"]
-size = Vector2(15, 19)
+size = Vector2(10.931591, 18)
 
 [node name="farmer" type="CharacterBody2D"]
 z_index = 5
@@ -245,5 +245,5 @@ autoplay = "idle"
 zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1.5)
+position = Vector2(1.4906718, 2)
 shape = SubResource("RectangleShape2D_loie6")
