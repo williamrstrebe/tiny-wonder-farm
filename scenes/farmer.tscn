@@ -225,7 +225,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loie6"]
@@ -238,7 +238,7 @@ script = ExtResource("1_2qlof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_go23t")
-animation = &"walk_down"
+animation = &"walk_right"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]

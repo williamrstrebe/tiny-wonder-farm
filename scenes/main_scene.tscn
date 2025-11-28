@@ -1,19 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5jwnvarqki0a"]
+[gd_scene load_steps=6 format=3 uid="uid://c5jwnvarqki0a"]
 
-[ext_resource type="Script" uid="uid://tg0fn7fp6e8r" path="res://scenes/main_scene.gd" id="1_pu3yx"]
+[ext_resource type="Script" uid="uid://tg0fn7fp6e8r" path="res://scripts/main_scene.gd" id="1_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://c2uls51hftvcd" path="res://scenes/grass_background.tscn" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://dftinuultaibv" path="res://scenes/farmer.tscn" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://0pj5vrqqxynk" path="res://scenes/strawberry.tscn" id="3_7ykc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu3yx"]
+size = Vector2(16, 20)
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_pu3yx")
 
 [node name="grass_background" parent="." instance=ExtResource("1_w2twt")]
 
-[node name="farmer" parent="." instance=ExtResource("2_pw63i")]
-position = Vector2(614, 191)
+[node name="Area2D" type="Area2D" parent="grass_background"]
+position = Vector2(560, 157)
+monitorable = false
 
-[node name="Label" type="Label" parent="farmer"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_background/Area2D"]
+position = Vector2(38, -12)
+shape = SubResource("RectangleShape2D_pu3yx")
+
+[node name="farmer_main" parent="." instance=ExtResource("2_pw63i")]
+position = Vector2(597, 166)
+
+[node name="Label" type="Label" parent="farmer_main"]
 z_index = 20
 offset_left = 70.55841
 offset_top = 53.0
@@ -24,3 +35,5 @@ text = "20:00"
 
 [node name="strawberry" parent="." instance=ExtResource("3_7ykc4")]
 position = Vector2(765, 238)
+
+[connection signal="body_entered" from="grass_background/Area2D" to="farmer_main" method="_on_area_2d_body_entered"]
