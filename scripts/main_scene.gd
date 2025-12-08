@@ -9,9 +9,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time = Time.get_datetime_dict_from_system()
-	$farmer_main/Label.text = str("%02d"%time.hour, ":", "%02d"%time.minute)
+	$farmer_main/IRL_time_text.text = str("%02d"%time.hour, ":", "%02d"%time.minute)
+	$farmer_main/INGAME_time_text.text = str("%02d"%Global.hour, ":", "%02d"%Global.minute)
 	
-	if Input.is_key_pressed(KEY_E):
-		var instance = strawberry.instantiate()
-		instance.position = get_global_mouse_position()
-		add_child(instance)
+	##if Input.is_key_pressed(KEY_E):
+		##var instance = strawberry.instantiate()
+		##instance.position = get_global_mouse_position()
+		##add_child(instance)

@@ -4,7 +4,7 @@ var minutes_total := 840          # total in-game minutes since start
 var hour := 14                  # 0..23
 var minute := 0               # 0..59
 
-const REAL_SECONDS_PER_GAME_MINUTE := .2
+const REAL_SECONDS_PER_GAME_MINUTE := .025
 
 var _accumulator := 0.0
 

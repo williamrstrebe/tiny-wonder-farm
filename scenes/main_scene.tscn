@@ -24,12 +24,21 @@ shape = SubResource("RectangleShape2D_pu3yx")
 [node name="farmer_main" parent="." instance=ExtResource("2_pw63i")]
 position = Vector2(597, 166)
 
-[node name="Label" type="Label" parent="farmer_main"]
+[node name="IRL_time_text" type="Label" parent="farmer_main"]
 z_index = 20
-offset_left = 174.90549
-offset_top = 104.0
-offset_right = 297.9055
-offset_bottom = 171.0
+offset_left = 192.79355
+offset_top = 112.0
+offset_right = 315.79355
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 48
+text = "20:00"
+
+[node name="INGAME_time_text" type="Label" parent="farmer_main"]
+z_index = 20
+offset_left = -314.0348
+offset_top = 111.0
+offset_right = -191.03479
+offset_bottom = 178.0
 theme_override_font_sizes/font_size = 48
 text = "20:00"
 
