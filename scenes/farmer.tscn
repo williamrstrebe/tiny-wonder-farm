@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://dftinuultaibv"]
+[gd_scene load_steps=35 format=3 uid="uid://dftinuultaibv"]
 
 [ext_resource type="Script" uid="uid://cyj4d3jf6ky7u" path="res://scripts/farmer.gd" id="1_2qlof"]
 [ext_resource type="Texture2D" uid="uid://b7hpg1hdpbd5l" path="res://images/walk and idle.png" id="1_vltvv"]
 [ext_resource type="Texture2D" uid="uid://fdljhtwnaqe0" path="res://images/up_down_walk and idle.png" id="3_hkter"]
+[ext_resource type="Script" uid="uid://c1myjseiqo1ku" path="res://scenes/color_rect.gd" id="4_7541a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qlof"]
 atlas = ExtResource("1_vltvv")
@@ -243,6 +244,19 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimatedSprite2D/Camera2D"]
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D/Camera2D/CanvasLayer"]
+z_index = 15
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_7541a")
+opacity = 0.0
+hours = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.4906718, 2)
