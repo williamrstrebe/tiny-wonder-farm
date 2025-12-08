@@ -23,11 +23,11 @@ var target_opacity := 0.5
 @export var minute: int
 
 func _ready() -> void:
-	hours = 12
-	minute = 0
+	hours = Global.hour
+	minute = Global.minute
 
 func _process(_delta):
-	update_overlay(hours, minute)
+	update_overlay(Global.hour, Global.minute)
 
 func update_overlay(h:int, m:int):
 	var t := h * 60 + m
