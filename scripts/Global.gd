@@ -4,12 +4,13 @@ var minutes_total := 840          # total in-game minutes since start
 var hour := 14                  # 0..23
 var minute := 0               # 0..59
 
-const REAL_SECONDS_PER_GAME_MINUTE := .025
+const REAL_SECONDS_PER_GAME_MINUTE := 1.0
+var time_scale := 1.0   # 0 = paused, 1 = normal, 2 = double speed, 0.5 = half speed
 
 var _accumulator := 0.0
 
 func _process(delta: float) -> void:
-	_accumulator += delta
+	_accumulator += delta * time_scale
 
 	while _accumulator >= REAL_SECONDS_PER_GAME_MINUTE:
 		_accumulator -= REAL_SECONDS_PER_GAME_MINUTE
